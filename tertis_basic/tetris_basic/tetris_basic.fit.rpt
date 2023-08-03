@@ -1,0 +1,963 @@
+Fitter report for tetris_basic
+Thu Dec 03 00:50:02 2020
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Fitter Device Options
+  6. Input Pins
+  7. Output Pins
+  8. All Package Pins
+  9. Control Signals
+ 10. Carry Chains
+ 11. Cascade Chains
+ 12. Non-Global High Fan-Out Signals
+ 13. Fitter Resource Usage Summary
+ 14. Fitter Resource Utilization by Entity
+ 15. Delay Chain Summary
+ 16. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------+
+; Fitter Summary                                                   ;
++-----------------------+------------------------------------------+
+; Fitter Status         ; Failed - Thu Dec 03 00:50:02 2020        ;
+; Quartus II Version    ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name         ; tetris_basic                             ;
+; Top-level Entity Name ; tetris_basic                             ;
+; Family                ; FLEX10K                                  ;
+; Device                ; EPF10K70RC240-4                          ;
+; Timing Models         ; Final                                    ;
+; Total logic elements  ; 7,223 / 3,744 ( 193 % )                  ;
+; Total pins            ; 194 / 189 ( 103 % )                      ;
+; Total memory bits     ; 0 / 18,432 ( 0 % )                       ;
++-----------------------+------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                      ;
++------------------------------------------------------------+--------------------+--------------------+
+; Option                                                     ; Setting            ; Default Value      ;
++------------------------------------------------------------+--------------------+--------------------+
+; Device                                                     ; EPF10K70RC240-4    ;                    ;
+; Use smart compilation                                      ; Off                ; Off                ;
+; Use TimeQuest Timing Analyzer                              ; Off                ; Off                ;
+; Router Timing Optimization Level                           ; Normal             ; Normal             ;
+; Placement Effort Multiplier                                ; 1.0                ; 1.0                ;
+; Router Effort Multiplier                                   ; 1.0                ; 1.0                ;
+; Optimize Timing                                            ; Normal compilation ; Normal compilation ;
+; Optimize Timing for ECOs                                   ; Off                ; Off                ;
+; Regenerate full fit report during ECO compiles             ; Off                ; Off                ;
+; Optimize IOC Register Placement for Timing                 ; On                 ; On                 ;
+; Limit to One Fitting Attempt                               ; Off                ; Off                ;
+; Final Placement Optimizations                              ; Automatically      ; Automatically      ;
+; Fitter Aggressive Routability Optimizations                ; Automatically      ; Automatically      ;
+; Fitter Initial Placement Seed                              ; 1                  ; 1                  ;
+; Slow Slew Rate                                             ; Off                ; Off                ;
+; Auto Global Memory Control Signals                         ; Off                ; Off                ;
+; Logic Cell Insertion - Individual Logic Cells              ; On                 ; On                 ;
+; Logic Cell Insertion - I/Os Fed By Carry or Cascade Chains ; On                 ; On                 ;
+; Fitter Effort                                              ; Auto Fit           ; Auto Fit           ;
+; Auto Global Clock                                          ; On                 ; On                 ;
+; Auto Global Output Enable                                  ; On                 ; On                 ;
+; Auto Global Register Control Signals                       ; On                 ; On                 ;
+; Force Fitter to Avoid Periphery Placement Warnings         ; Off                ; Off                ;
++------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------+
+; Fitter Device Options                                                   ;
++----------------------------------------------+--------------------------+
+; Option                                       ; Setting                  ;
++----------------------------------------------+--------------------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off                      ;
+; Enable device-wide reset (DEV_CLRn)          ; Off                      ;
+; Enable device-wide output enable (DEV_OE)    ; Off                      ;
+; Enable INIT_DONE output                      ; Off                      ;
+; Configuration scheme                         ; Passive Serial           ;
+; nWS, nRS, nCS, CS                            ; Unreserved               ;
+; RDYnBUSY                                     ; Unreserved               ;
+; Data[7..1]                                   ; Unreserved               ;
+; Reserve all unused pins                      ; As output driving ground ;
+; Base pin-out file on sameframe device        ; Off                      ;
++----------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                  ;
++--------+------------+-----+------+---------+--------+--------------+-------------------------+---------------+---------------+--------------+
+; Name   ; Pin #      ; Row ; Col. ; Fan-Out ; Global ; I/O Register ; Use Local Routing Input ; Power Up High ; Single-Pin CE ; I/O Standard ;
++--------+------------+-----+------+---------+--------+--------------+-------------------------+---------------+---------------+--------------+
+; Ack    ; Unassigned ; --  ; --   ; 2       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; Start  ; Unassigned ; --  ; --   ; 2       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; Clk    ; Unassigned ; --  ; --   ; 205     ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; Reset  ; Unassigned ; --  ; --   ; 201     ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; Right  ; Unassigned ; --  ; --   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; Left   ; Unassigned ; --  ; --   ; 3       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; Down   ; Unassigned ; --  ; --   ; 18      ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; Rotate ; Unassigned ; --  ; --   ; 2       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
++--------+------------+-----+------+---------+--------+--------------+-------------------------+---------------+---------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                     ;
++----------------+------------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
+; Name           ; Pin #      ; Row ; Col. ; I/O Register ; Use Local Routing Output ; Power Up High ; Slow Slew Rate ; Single-Pin OE ; Single-Pin CE ; Open Drain ; TRI Primitive ; I/O Standard ;
++----------------+------------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
+; q_I            ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; q_Gen          ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; q_Rot          ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; q_Col          ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; q_Lose         ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[0]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[1]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[2]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[3]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[4]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[5]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[6]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[7]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[8]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[9]      ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[10]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[11]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[12]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[13]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[14]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[15]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[16]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[17]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[18]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[19]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[20]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[21]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[22]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[23]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[24]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[25]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[26]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[27]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[28]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[29]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[30]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[31]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[32]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[33]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[34]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[35]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[36]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[37]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[38]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[39]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[40]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[41]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[42]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[43]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[44]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[45]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[46]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[47]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[48]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[49]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[50]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[51]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[52]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[53]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[54]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[55]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[56]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[57]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[58]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[59]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[60]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[61]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[62]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[63]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[64]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[65]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[66]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[67]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[68]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[69]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[70]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[71]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[72]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[73]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[74]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[75]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[76]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[77]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[78]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[79]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[80]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[81]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[82]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[83]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[84]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[85]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[86]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[87]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[88]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[89]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[90]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[91]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[92]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[93]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[94]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[95]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[96]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[97]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[98]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[99]     ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[100]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[101]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[102]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[103]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[104]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[105]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[106]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[107]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[108]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[109]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[110]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[111]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[112]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[113]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[114]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[115]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[116]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[117]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[118]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[119]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[120]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[121]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[122]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[123]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[124]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[125]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[126]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[127]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[128]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[129]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[130]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[131]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[132]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[133]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[134]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[135]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[136]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[137]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[138]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[139]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[140]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[141]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[142]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[143]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[144]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[145]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[146]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[147]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[148]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[149]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[150]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[151]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[152]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[153]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[154]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[155]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[156]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[157]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[158]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; blocks[159]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; score[0]       ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; score[1]       ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; score[2]       ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; score[3]       ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; score[4]       ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; score[5]       ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; score[6]       ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; score[7]       ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; orientation[0] ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; orientation[1] ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; location[0]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; location[1]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; location[2]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; location[3]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; location[4]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; location[5]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; location[6]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; location[7]    ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; next_block[0]  ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; next_block[1]  ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; next_block[2]  ; Unassigned ; --  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
++----------------+------------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
+
+
++-----------------------------------+
+; All Package Pins                  ;
++-------+------------+--------------+
+; Pin # ; Usage      ; I/O Standard ;
++-------+------------+--------------+
+; 1     ; #TCK       ;              ;
+; 2     ; ^CONF_DONE ;              ;
+; 3     ; ^nCEO      ;              ;
+; 4     ; #TDO       ;              ;
+; 5     ; VCC_INT    ;              ;
+; 6     ; GND*       ;              ;
+; 7     ; GND*       ;              ;
+; 8     ; GND*       ;              ;
+; 9     ; GND*       ;              ;
+; 10    ; GND_INT    ;              ;
+; 11    ; GND*       ;              ;
+; 12    ; GND*       ;              ;
+; 13    ; GND*       ;              ;
+; 14    ; GND*       ;              ;
+; 15    ; GND*       ;              ;
+; 16    ; VCC_INT    ;              ;
+; 17    ; GND*       ;              ;
+; 18    ; GND*       ;              ;
+; 19    ; GND*       ;              ;
+; 20    ; GND*       ;              ;
+; 21    ; GND*       ;              ;
+; 22    ; GND_INT    ;              ;
+; 23    ; GND*       ;              ;
+; 24    ; GND*       ;              ;
+; 25    ; GND*       ;              ;
+; 26    ; GND*       ;              ;
+; 27    ; VCC_INT    ;              ;
+; 28    ; GND*       ;              ;
+; 29    ; GND*       ;              ;
+; 30    ; GND*       ;              ;
+; 31    ; GND*       ;              ;
+; 32    ; GND_INT    ;              ;
+; 33    ; GND*       ;              ;
+; 34    ; GND*       ;              ;
+; 35    ; GND*       ;              ;
+; 36    ; GND*       ;              ;
+; 37    ; VCC_INT    ;              ;
+; 38    ; GND*       ;              ;
+; 39    ; GND*       ;              ;
+; 40    ; GND*       ;              ;
+; 41    ; GND*       ;              ;
+; 42    ; GND_INT    ;              ;
+; 43    ; GND*       ;              ;
+; 44    ; GND*       ;              ;
+; 45    ; GND*       ;              ;
+; 46    ; GND*       ;              ;
+; 47    ; VCC_INT    ;              ;
+; 48    ; GND*       ;              ;
+; 49    ; GND*       ;              ;
+; 50    ; GND*       ;              ;
+; 51    ; GND*       ;              ;
+; 52    ; GND_INT    ;              ;
+; 53    ; GND*       ;              ;
+; 54    ; GND*       ;              ;
+; 55    ; GND*       ;              ;
+; 56    ; GND*       ;              ;
+; 57    ; VCC_INT    ;              ;
+; 58    ; #TMS       ;              ;
+; 59    ; #TRST      ;              ;
+; 60    ; ^nSTATUS   ;              ;
+; 61    ; GND*       ;              ;
+; 62    ; GND*       ;              ;
+; 63    ; GND*       ;              ;
+; 64    ; GND*       ;              ;
+; 65    ; GND*       ;              ;
+; 66    ; GND*       ;              ;
+; 67    ; GND*       ;              ;
+; 68    ; GND*       ;              ;
+; 69    ; GND_INT    ;              ;
+; 70    ; GND*       ;              ;
+; 71    ; GND*       ;              ;
+; 72    ; GND*       ;              ;
+; 73    ; GND*       ;              ;
+; 74    ; GND*       ;              ;
+; 75    ; GND*       ;              ;
+; 76    ; GND*       ;              ;
+; 77    ; VCC_INT    ;              ;
+; 78    ; GND*       ;              ;
+; 79    ; GND*       ;              ;
+; 80    ; GND*       ;              ;
+; 81    ; GND*       ;              ;
+; 82    ; GND*       ;              ;
+; 83    ; GND*       ;              ;
+; 84    ; GND*       ;              ;
+; 85    ; GND_INT    ;              ;
+; 86    ; GND*       ;              ;
+; 87    ; GND*       ;              ;
+; 88    ; GND*       ;              ;
+; 89    ; VCC_INT    ;              ;
+; 90    ; GND+       ;              ;
+; 91    ; GND+       ;              ;
+; 92    ; GND+       ;              ;
+; 93    ; GND_INT    ;              ;
+; 94    ; GND*       ;              ;
+; 95    ; GND*       ;              ;
+; 96    ; VCC_INT    ;              ;
+; 97    ; GND*       ;              ;
+; 98    ; GND*       ;              ;
+; 99    ; GND*       ;              ;
+; 100   ; GND*       ;              ;
+; 101   ; GND*       ;              ;
+; 102   ; GND*       ;              ;
+; 103   ; GND*       ;              ;
+; 104   ; GND_INT    ;              ;
+; 105   ; GND*       ;              ;
+; 106   ; GND*       ;              ;
+; 107   ; GND*       ;              ;
+; 108   ; GND*       ;              ;
+; 109   ; GND*       ;              ;
+; 110   ; GND*       ;              ;
+; 111   ; GND*       ;              ;
+; 112   ; VCC_INT    ;              ;
+; 113   ; GND*       ;              ;
+; 114   ; GND*       ;              ;
+; 115   ; GND*       ;              ;
+; 116   ; GND*       ;              ;
+; 117   ; GND*       ;              ;
+; 118   ; GND*       ;              ;
+; 119   ; GND*       ;              ;
+; 120   ; GND*       ;              ;
+; 121   ; ^nCONFIG   ;              ;
+; 122   ; VCC_INT    ;              ;
+; 123   ; ^MSEL1     ;              ;
+; 124   ; ^MSEL0     ;              ;
+; 125   ; GND_INT    ;              ;
+; 126   ; GND*       ;              ;
+; 127   ; GND*       ;              ;
+; 128   ; GND*       ;              ;
+; 129   ; GND*       ;              ;
+; 130   ; VCC_INT    ;              ;
+; 131   ; GND*       ;              ;
+; 132   ; GND*       ;              ;
+; 133   ; GND*       ;              ;
+; 134   ; GND*       ;              ;
+; 135   ; GND_INT    ;              ;
+; 136   ; GND*       ;              ;
+; 137   ; GND*       ;              ;
+; 138   ; GND*       ;              ;
+; 139   ; GND*       ;              ;
+; 140   ; VCC_INT    ;              ;
+; 141   ; GND*       ;              ;
+; 142   ; GND*       ;              ;
+; 143   ; GND*       ;              ;
+; 144   ; GND*       ;              ;
+; 145   ; GND_INT    ;              ;
+; 146   ; GND*       ;              ;
+; 147   ; GND*       ;              ;
+; 148   ; GND*       ;              ;
+; 149   ; GND*       ;              ;
+; 150   ; VCC_INT    ;              ;
+; 151   ; GND*       ;              ;
+; 152   ; GND*       ;              ;
+; 153   ; GND*       ;              ;
+; 154   ; GND*       ;              ;
+; 155   ; GND_INT    ;              ;
+; 156   ; GND*       ;              ;
+; 157   ; GND*       ;              ;
+; 158   ; GND*       ;              ;
+; 159   ; GND*       ;              ;
+; 160   ; VCC_INT    ;              ;
+; 161   ; GND*       ;              ;
+; 162   ; GND*       ;              ;
+; 163   ; GND*       ;              ;
+; 164   ; GND*       ;              ;
+; 165   ; GND_INT    ;              ;
+; 166   ; GND*       ;              ;
+; 167   ; GND*       ;              ;
+; 168   ; GND*       ;              ;
+; 169   ; GND*       ;              ;
+; 170   ; VCC_INT    ;              ;
+; 171   ; GND*       ;              ;
+; 172   ; GND*       ;              ;
+; 173   ; GND*       ;              ;
+; 174   ; GND*       ;              ;
+; 175   ; GND*       ;              ;
+; 176   ; GND_INT    ;              ;
+; 177   ; #TDI       ;              ;
+; 178   ; ^nCE       ;              ;
+; 179   ; ^DCLK      ;              ;
+; 180   ; ^DATA0     ;              ;
+; 181   ; GND*       ;              ;
+; 182   ; GND*       ;              ;
+; 183   ; GND*       ;              ;
+; 184   ; GND*       ;              ;
+; 185   ; GND*       ;              ;
+; 186   ; GND*       ;              ;
+; 187   ; GND*       ;              ;
+; 188   ; GND*       ;              ;
+; 189   ; VCC_INT    ;              ;
+; 190   ; GND*       ;              ;
+; 191   ; GND*       ;              ;
+; 192   ; GND*       ;              ;
+; 193   ; GND*       ;              ;
+; 194   ; GND*       ;              ;
+; 195   ; GND*       ;              ;
+; 196   ; GND*       ;              ;
+; 197   ; GND_INT    ;              ;
+; 198   ; GND*       ;              ;
+; 199   ; GND*       ;              ;
+; 200   ; GND*       ;              ;
+; 201   ; GND*       ;              ;
+; 202   ; GND*       ;              ;
+; 203   ; GND*       ;              ;
+; 204   ; GND*       ;              ;
+; 205   ; VCC_INT    ;              ;
+; 206   ; GND*       ;              ;
+; 207   ; GND*       ;              ;
+; 208   ; GND*       ;              ;
+; 209   ; GND*       ;              ;
+; 210   ; GND+       ;              ;
+; 211   ; GND+       ;              ;
+; 212   ; GND+       ;              ;
+; 213   ; GND*       ;              ;
+; 214   ; GND*       ;              ;
+; 215   ; GND*       ;              ;
+; 216   ; GND_INT    ;              ;
+; 217   ; GND*       ;              ;
+; 218   ; GND*       ;              ;
+; 219   ; GND*       ;              ;
+; 220   ; GND*       ;              ;
+; 221   ; GND*       ;              ;
+; 222   ; GND*       ;              ;
+; 223   ; GND*       ;              ;
+; 224   ; VCC_INT    ;              ;
+; 225   ; GND*       ;              ;
+; 226   ; GND*       ;              ;
+; 227   ; GND*       ;              ;
+; 228   ; GND*       ;              ;
+; 229   ; GND*       ;              ;
+; 230   ; GND*       ;              ;
+; 231   ; GND*       ;              ;
+; 232   ; GND_INT    ;              ;
+; 233   ; GND*       ;              ;
+; 234   ; GND*       ;              ;
+; 235   ; GND*       ;              ;
+; 236   ; GND*       ;              ;
+; 237   ; GND*       ;              ;
+; 238   ; GND*       ;              ;
+; 239   ; GND*       ;              ;
+; 240   ; GND*       ;              ;
++-------+------------+--------------+
+
+
++------------------------------------------------------------------------+
+; Control Signals                                                        ;
++-------------------+------------+---------+--------------+--------------+
+; Name              ; Pin #      ; Fan-Out ; Usage        ; Global Usage ;
++-------------------+------------+---------+--------------+--------------+
+; next_block[0]~3   ; Unassigned ; 1       ; Clock enable ; Non-global   ;
+; Selector14~3      ; Unassigned ; 154     ; Clock enable ; Non-global   ;
+; Selector18~2      ; Unassigned ; 4       ; Clock enable ; Non-global   ;
+; Selector19~1      ; Unassigned ; 2       ; Clock enable ; Non-global   ;
+; Selector179~2     ; Unassigned ; 3       ; Clock enable ; Non-global   ;
+; Selector182~7     ; Unassigned ; 30      ; Clock enable ; Non-global   ;
+; orientation[0]~27 ; Unassigned ; 2       ; Clock enable ; Non-global   ;
+; Clk               ; Unassigned ; 205     ; Clock        ; Non-global   ;
+; Reset             ; Unassigned ; 201     ; Async. clear ; Non-global   ;
++-------------------+------------+---------+--------------+--------------+
+
+
++---------------------------------------------+
+; Carry Chains                                ;
++--------------------+------------------------+
+; Carry Chain Length ; Number of Carry Chains ;
++--------------------+------------------------+
+; 0 - 1              ; 0                      ;
+; 2 - 3              ; 0                      ;
+; 4 - 5              ; 0                      ;
+; 6 - 7              ; 1                      ;
+; 8 - 9              ; 1                      ;
+; 10 - 11            ; 0                      ;
+; 12 - 13            ; 0                      ;
+; 14 - 15            ; 0                      ;
+; 16 - 17            ; 0                      ;
+; 18 - 19            ; 0                      ;
+; 20 - 21            ; 0                      ;
+; 22 - 23            ; 0                      ;
+; 24 - 25            ; 1                      ;
++--------------------+------------------------+
+
+
++----------------+
+; Cascade Chains ;
++--------+-------+
+; Length ; Count ;
++--------+-------+
+; 2      ; 354   ;
+; 3      ; 46    ;
++--------+-------+
+
+
++---------------------------------+
+; Non-Global High Fan-Out Signals ;
++-------------------+-------------+
+; Name              ; Fan-Out     ;
++-------------------+-------------+
+; location[1]~211   ; 492         ;
+; location[2]~212   ; 485         ;
+; location[0]~218   ; 470         ;
+; location[3]~213   ; 444         ;
+; location[5]~215   ; 414         ;
+; location[4]~214   ; 394         ;
+; always1~94        ; 349         ;
+; location[6]~216   ; 253         ;
+; block_type[0]~4   ; 215         ;
+; Clk               ; 205         ;
+; orientation[0]~28 ; 205         ;
+; always1~85        ; 202         ;
+; Reset             ; 201         ;
+; Decoder13~257     ; 201         ;
+; state[2]~22       ; 187         ;
+; always1~92        ; 186         ;
+; state[0]~20       ; 185         ;
+; Decoder13~214     ; 183         ;
+; location[7]~217   ; 182         ;
+; Decoder13~229     ; 175         ;
+; Decoder13~198     ; 174         ;
+; Decoder13~176     ; 173         ;
+; Decoder13~241     ; 169         ;
+; Decoder13~272     ; 168         ;
+; Decoder13~288     ; 166         ;
+; always1~79        ; 164         ;
+; Decoder11~168     ; 162         ;
+; blocks~17383      ; 161         ;
+; always1~93        ; 161         ;
+; blocks~17407      ; 161         ;
+; blocks~17387      ; 160         ;
+; blocks~17406      ; 160         ;
+; Selector173~29    ; 159         ;
+; Selector173~27    ; 158         ;
+; Selector173~21    ; 158         ;
+; Selector173~25    ; 158         ;
+; Selector14~22     ; 154         ;
+; always1~95        ; 151         ;
+; blocks~17417      ; 141         ;
+; Decoder13~303     ; 111         ;
+; blocks~17371      ; 100         ;
+; Decoder11~167     ; 98          ;
+; Decoder11~182     ; 84          ;
+; Decoder11~165     ; 82          ;
+; Decoder11~174     ; 74          ;
+; Decoder11~180     ; 73          ;
+; Decoder11~170     ; 70          ;
+; Decoder11~176     ; 65          ;
+; Decoder11~166     ; 62          ;
+; Decoder11~184     ; 59          ;
++-------------------+-------------+
+
+
++-------------------------------------------------------------+
+; Fitter Resource Usage Summary                               ;
++-----------------------------------+-------------------------+
+; Resource                          ; Usage                   ;
++-----------------------------------+-------------------------+
+; Total logic elements              ; 7,223 / 3,744 ( 193 % ) ;
+; Registers                         ; 205 / 3,744 ( 5 % )     ;
+; Logic elements in carry chains    ; 39                      ;
+; User inserted logic elements      ; 0                       ;
+; I/O pins                          ; 194 / 189 ( 103 % )     ;
+;     -- Clock pins                 ; 0 / 0 ( -- )            ;
+;     -- Dedicated input pins       ; 0 / 4 ( 0 % )           ;
+; Global signals                    ; 0                       ;
+; EABs                              ; 0 / 9 ( 0 % )           ;
+; Total memory bits                 ; 0 / 18,432 ( 0 % )      ;
+; Total RAM block bits              ; 0 / 18,432 ( 0 % )      ;
+; Maximum fan-out node              ; location[1]~reg0        ;
+; Maximum fan-out                   ; 492                     ;
+; Highest non-global fan-out signal ; location[1]~reg0        ;
+; Highest non-global fan-out        ; 492                     ;
+; Total fan-out                     ; 27782                   ;
+; Average fan-out                   ; 3.75                    ;
++-----------------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                            ;
++------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                   ; Library Name ;
++------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------+--------------+
+; |tetris_basic                      ; 7223 (7184) ; 205          ; 0           ; 194  ; 7018 (6979)  ; 1 (1)             ; 204 (204)        ; 39 (0)          ; 0 (0)      ; |tetris_basic                                                         ; work         ;
+;    |lpm_add_sub:Add15|             ; 7 (0)       ; 0            ; 0           ; 0    ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 7 (0)           ; 0 (0)      ; |tetris_basic|lpm_add_sub:Add15                                       ; work         ;
+;       |addcore:adder|              ; 7 (1)       ; 0            ; 0           ; 0    ; 7 (1)        ; 0 (0)             ; 0 (0)            ; 7 (1)           ; 0 (0)      ; |tetris_basic|lpm_add_sub:Add15|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 6 (6)       ; 0            ; 0           ; 0    ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |tetris_basic|lpm_add_sub:Add15|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add16|             ; 8 (0)       ; 0            ; 0           ; 0    ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 8 (0)           ; 0 (0)      ; |tetris_basic|lpm_add_sub:Add16                                       ; work         ;
+;       |addcore:adder|              ; 8 (1)       ; 0            ; 0           ; 0    ; 8 (1)        ; 0 (0)             ; 0 (0)            ; 8 (1)           ; 0 (0)      ; |tetris_basic|lpm_add_sub:Add16|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 7 (7)       ; 0            ; 0           ; 0    ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |tetris_basic|lpm_add_sub:Add16|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add9|              ; 24 (0)      ; 0            ; 0           ; 0    ; 24 (0)       ; 0 (0)             ; 0 (0)            ; 24 (0)          ; 0 (0)      ; |tetris_basic|lpm_add_sub:Add9                                        ; work         ;
+;       |addcore:adder|              ; 24 (1)      ; 0            ; 0           ; 0    ; 24 (1)       ; 0 (0)             ; 0 (0)            ; 24 (1)          ; 0 (0)      ; |tetris_basic|lpm_add_sub:Add9|addcore:adder                          ; work         ;
+;          |a_csnbuffer:result_node| ; 23 (23)     ; 0            ; 0           ; 0    ; 23 (23)      ; 0 (0)             ; 0 (0)            ; 23 (23)         ; 0 (0)      ; |tetris_basic|lpm_add_sub:Add9|addcore:adder|a_csnbuffer:result_node  ; work         ;
++------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------+
+; Delay Chain Summary                     ;
++----------------+----------+-------------+
+; Name           ; Pin Type ; Pad to Core ;
++----------------+----------+-------------+
+; Ack            ; Input    ; OFF         ;
+; Start          ; Input    ; OFF         ;
+; Clk            ; Input    ; OFF         ;
+; Reset          ; Input    ; OFF         ;
+; Right          ; Input    ; OFF         ;
+; Left           ; Input    ; OFF         ;
+; Down           ; Input    ; OFF         ;
+; Rotate         ; Input    ; OFF         ;
+; q_I            ; Output   ; OFF         ;
+; q_Gen          ; Output   ; OFF         ;
+; q_Rot          ; Output   ; OFF         ;
+; q_Col          ; Output   ; OFF         ;
+; q_Lose         ; Output   ; OFF         ;
+; blocks[0]      ; Output   ; OFF         ;
+; blocks[1]      ; Output   ; OFF         ;
+; blocks[2]      ; Output   ; OFF         ;
+; blocks[3]      ; Output   ; OFF         ;
+; blocks[4]      ; Output   ; OFF         ;
+; blocks[5]      ; Output   ; OFF         ;
+; blocks[6]      ; Output   ; OFF         ;
+; blocks[7]      ; Output   ; OFF         ;
+; blocks[8]      ; Output   ; OFF         ;
+; blocks[9]      ; Output   ; OFF         ;
+; blocks[10]     ; Output   ; OFF         ;
+; blocks[11]     ; Output   ; OFF         ;
+; blocks[12]     ; Output   ; OFF         ;
+; blocks[13]     ; Output   ; OFF         ;
+; blocks[14]     ; Output   ; OFF         ;
+; blocks[15]     ; Output   ; OFF         ;
+; blocks[16]     ; Output   ; OFF         ;
+; blocks[17]     ; Output   ; OFF         ;
+; blocks[18]     ; Output   ; OFF         ;
+; blocks[19]     ; Output   ; OFF         ;
+; blocks[20]     ; Output   ; OFF         ;
+; blocks[21]     ; Output   ; OFF         ;
+; blocks[22]     ; Output   ; OFF         ;
+; blocks[23]     ; Output   ; OFF         ;
+; blocks[24]     ; Output   ; OFF         ;
+; blocks[25]     ; Output   ; OFF         ;
+; blocks[26]     ; Output   ; OFF         ;
+; blocks[27]     ; Output   ; OFF         ;
+; blocks[28]     ; Output   ; OFF         ;
+; blocks[29]     ; Output   ; OFF         ;
+; blocks[30]     ; Output   ; OFF         ;
+; blocks[31]     ; Output   ; OFF         ;
+; blocks[32]     ; Output   ; OFF         ;
+; blocks[33]     ; Output   ; OFF         ;
+; blocks[34]     ; Output   ; OFF         ;
+; blocks[35]     ; Output   ; OFF         ;
+; blocks[36]     ; Output   ; OFF         ;
+; blocks[37]     ; Output   ; OFF         ;
+; blocks[38]     ; Output   ; OFF         ;
+; blocks[39]     ; Output   ; OFF         ;
+; blocks[40]     ; Output   ; OFF         ;
+; blocks[41]     ; Output   ; OFF         ;
+; blocks[42]     ; Output   ; OFF         ;
+; blocks[43]     ; Output   ; OFF         ;
+; blocks[44]     ; Output   ; OFF         ;
+; blocks[45]     ; Output   ; OFF         ;
+; blocks[46]     ; Output   ; OFF         ;
+; blocks[47]     ; Output   ; OFF         ;
+; blocks[48]     ; Output   ; OFF         ;
+; blocks[49]     ; Output   ; OFF         ;
+; blocks[50]     ; Output   ; OFF         ;
+; blocks[51]     ; Output   ; OFF         ;
+; blocks[52]     ; Output   ; OFF         ;
+; blocks[53]     ; Output   ; OFF         ;
+; blocks[54]     ; Output   ; OFF         ;
+; blocks[55]     ; Output   ; OFF         ;
+; blocks[56]     ; Output   ; OFF         ;
+; blocks[57]     ; Output   ; OFF         ;
+; blocks[58]     ; Output   ; OFF         ;
+; blocks[59]     ; Output   ; OFF         ;
+; blocks[60]     ; Output   ; OFF         ;
+; blocks[61]     ; Output   ; OFF         ;
+; blocks[62]     ; Output   ; OFF         ;
+; blocks[63]     ; Output   ; OFF         ;
+; blocks[64]     ; Output   ; OFF         ;
+; blocks[65]     ; Output   ; OFF         ;
+; blocks[66]     ; Output   ; OFF         ;
+; blocks[67]     ; Output   ; OFF         ;
+; blocks[68]     ; Output   ; OFF         ;
+; blocks[69]     ; Output   ; OFF         ;
+; blocks[70]     ; Output   ; OFF         ;
+; blocks[71]     ; Output   ; OFF         ;
+; blocks[72]     ; Output   ; OFF         ;
+; blocks[73]     ; Output   ; OFF         ;
+; blocks[74]     ; Output   ; OFF         ;
+; blocks[75]     ; Output   ; OFF         ;
+; blocks[76]     ; Output   ; OFF         ;
+; blocks[77]     ; Output   ; OFF         ;
+; blocks[78]     ; Output   ; OFF         ;
+; blocks[79]     ; Output   ; OFF         ;
+; blocks[80]     ; Output   ; OFF         ;
+; blocks[81]     ; Output   ; OFF         ;
+; blocks[82]     ; Output   ; OFF         ;
+; blocks[83]     ; Output   ; OFF         ;
+; blocks[84]     ; Output   ; OFF         ;
+; blocks[85]     ; Output   ; OFF         ;
+; blocks[86]     ; Output   ; OFF         ;
+; blocks[87]     ; Output   ; OFF         ;
+; blocks[88]     ; Output   ; OFF         ;
+; blocks[89]     ; Output   ; OFF         ;
+; blocks[90]     ; Output   ; OFF         ;
+; blocks[91]     ; Output   ; OFF         ;
+; blocks[92]     ; Output   ; OFF         ;
+; blocks[93]     ; Output   ; OFF         ;
+; blocks[94]     ; Output   ; OFF         ;
+; blocks[95]     ; Output   ; OFF         ;
+; blocks[96]     ; Output   ; OFF         ;
+; blocks[97]     ; Output   ; OFF         ;
+; blocks[98]     ; Output   ; OFF         ;
+; blocks[99]     ; Output   ; OFF         ;
+; blocks[100]    ; Output   ; OFF         ;
+; blocks[101]    ; Output   ; OFF         ;
+; blocks[102]    ; Output   ; OFF         ;
+; blocks[103]    ; Output   ; OFF         ;
+; blocks[104]    ; Output   ; OFF         ;
+; blocks[105]    ; Output   ; OFF         ;
+; blocks[106]    ; Output   ; OFF         ;
+; blocks[107]    ; Output   ; OFF         ;
+; blocks[108]    ; Output   ; OFF         ;
+; blocks[109]    ; Output   ; OFF         ;
+; blocks[110]    ; Output   ; OFF         ;
+; blocks[111]    ; Output   ; OFF         ;
+; blocks[112]    ; Output   ; OFF         ;
+; blocks[113]    ; Output   ; OFF         ;
+; blocks[114]    ; Output   ; OFF         ;
+; blocks[115]    ; Output   ; OFF         ;
+; blocks[116]    ; Output   ; OFF         ;
+; blocks[117]    ; Output   ; OFF         ;
+; blocks[118]    ; Output   ; OFF         ;
+; blocks[119]    ; Output   ; OFF         ;
+; blocks[120]    ; Output   ; OFF         ;
+; blocks[121]    ; Output   ; OFF         ;
+; blocks[122]    ; Output   ; OFF         ;
+; blocks[123]    ; Output   ; OFF         ;
+; blocks[124]    ; Output   ; OFF         ;
+; blocks[125]    ; Output   ; OFF         ;
+; blocks[126]    ; Output   ; OFF         ;
+; blocks[127]    ; Output   ; OFF         ;
+; blocks[128]    ; Output   ; OFF         ;
+; blocks[129]    ; Output   ; OFF         ;
+; blocks[130]    ; Output   ; OFF         ;
+; blocks[131]    ; Output   ; OFF         ;
+; blocks[132]    ; Output   ; OFF         ;
+; blocks[133]    ; Output   ; OFF         ;
+; blocks[134]    ; Output   ; OFF         ;
+; blocks[135]    ; Output   ; OFF         ;
+; blocks[136]    ; Output   ; OFF         ;
+; blocks[137]    ; Output   ; OFF         ;
+; blocks[138]    ; Output   ; OFF         ;
+; blocks[139]    ; Output   ; OFF         ;
+; blocks[140]    ; Output   ; OFF         ;
+; blocks[141]    ; Output   ; OFF         ;
+; blocks[142]    ; Output   ; OFF         ;
+; blocks[143]    ; Output   ; OFF         ;
+; blocks[144]    ; Output   ; OFF         ;
+; blocks[145]    ; Output   ; OFF         ;
+; blocks[146]    ; Output   ; OFF         ;
+; blocks[147]    ; Output   ; OFF         ;
+; blocks[148]    ; Output   ; OFF         ;
+; blocks[149]    ; Output   ; OFF         ;
+; blocks[150]    ; Output   ; OFF         ;
+; blocks[151]    ; Output   ; OFF         ;
+; blocks[152]    ; Output   ; OFF         ;
+; blocks[153]    ; Output   ; OFF         ;
+; blocks[154]    ; Output   ; OFF         ;
+; blocks[155]    ; Output   ; OFF         ;
+; blocks[156]    ; Output   ; OFF         ;
+; blocks[157]    ; Output   ; OFF         ;
+; blocks[158]    ; Output   ; OFF         ;
+; blocks[159]    ; Output   ; OFF         ;
+; score[0]       ; Output   ; OFF         ;
+; score[1]       ; Output   ; OFF         ;
+; score[2]       ; Output   ; OFF         ;
+; score[3]       ; Output   ; OFF         ;
+; score[4]       ; Output   ; OFF         ;
+; score[5]       ; Output   ; OFF         ;
+; score[6]       ; Output   ; OFF         ;
+; score[7]       ; Output   ; OFF         ;
+; orientation[0] ; Output   ; OFF         ;
+; orientation[1] ; Output   ; OFF         ;
+; location[0]    ; Output   ; OFF         ;
+; location[1]    ; Output   ; OFF         ;
+; location[2]    ; Output   ; OFF         ;
+; location[3]    ; Output   ; OFF         ;
+; location[4]    ; Output   ; OFF         ;
+; location[5]    ; Output   ; OFF         ;
+; location[6]    ; Output   ; OFF         ;
+; location[7]    ; Output   ; OFF         ;
+; next_block[0]  ; Output   ; OFF         ;
+; next_block[1]  ; Output   ; OFF         ;
+; next_block[2]  ; Output   ; OFF         ;
++----------------+----------+-------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Thu Dec 03 00:50:00 2020
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off tetris_basic -c tetris_basic
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Selected device EPF10K70RC240-4 for design "tetris_basic"
+Error: Can't place all I/O pins in the current design
+    Error: There are 183 regular I/O pins, 4 dedicated fast pins and 2 dedicated clocks still available for the Fitter to place remaining pins in the design
+    Error: Fitter needs to place 8 input pins, because 0 of the pins cannot be placed on dedicated fast or dedicated clock pins
+    Error: Fitter needs to place 186 output pins
+Info: Inserted 0 logic cells in first fitting attempt
+Error: Project requires 7223 logic cells, but the selected device can contain only 3744 logic cells
+Error: Project requires 194 I/O pins, but the selected device can contain only 183 I/O pins
+Error: Can't find fit
+Error: Quartus II Fitter was unsuccessful. 7 errors, 0 warnings
+    Error: Peak virtual memory: 258 megabytes
+    Error: Processing ended: Thu Dec 03 00:50:03 2020
+    Error: Elapsed time: 00:00:03
+    Error: Total CPU time (on all processors): 00:00:02
+
+

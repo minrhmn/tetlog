@@ -1,0 +1,10 @@
+Fitter Status : Failed - Thu Dec 03 00:50:02 2020
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : tetris_basic
+Top-level Entity Name : tetris_basic
+Family : FLEX10K
+Device : EPF10K70RC240-4
+Timing Models : Final
+Total logic elements : 7,223 / 3,744 ( 193 % )
+Total pins : 194 / 189 ( 103 % )
+Total memory bits : 0 / 18,432 ( 0 % )

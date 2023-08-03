@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="tetris_basic">
+		<CBX_INST_ENTRY INSTANCE_NAME="|tetris_basic|lpm_add_sub:Add15" CBX_FILE_NAME="add_sub_fnh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tetris_basic|lpm_add_sub:Add16" CBX_FILE_NAME="add_sub_lch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tetris_basic|lpm_add_sub:Add9" CBX_FILE_NAME="add_sub_uoh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
